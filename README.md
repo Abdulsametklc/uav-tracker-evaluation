@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Target_icon.svg" width="120px" />
-
 # 🛰️ Multi-Tracker Performance Benchmarking Suite
 **Object Tracking algoritmalarını tarafsız ve tek çatı altında karşılaştıran benchmark framework**
 
