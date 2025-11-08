@@ -19,7 +19,6 @@ Farklı takip algoritmalarının gerçek senaryolardaki güçlü ve zayıf yönl
 | DeepSORT | Appearance + Motion | ID koruma konusunda güçlü |
 | FlowTracker | Optical Flow | Yüksek kare hızı avantajı |
 | BoT-SORT | ReID + Kalman | ID Switch düşük, stabil |
-| MDNet | CNN Tabanlı | Uzun süreli takipte güçlü |
 | MOSSE | Çok hafif DCF | Çok hızlı, düşük doğruluk |
 | NORFAIR | Motion-only | GPU kullanmayan hafif yapı |
 | TLD | Track-Learn-Detect | Eski nesil, düşük kararlılık |
