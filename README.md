@@ -1,55 +1,85 @@
-# 🛰️ Multi-Tracker Performance Benchmarking Suite
+<div align="center">
 
-Bu proje; farklı **Object Tracking** algoritmalarını ortak bir veri seti ve ortak değerlendirme metrikleri altında karşılaştırmak için geliştirilmiş bir kıyaslama (benchmark) altyapısı sunar.  
-Tracking modelleri; tespit (detection) sonrası **ID koruma, kayıp takibi, kararlılık ve hız** gibi performans kriterleri üzerinden değerlendirilir.
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Target_icon.svg" width="120px" />
+
+# 🛰️ Multi-Tracker Performance Benchmarking Suite
+**Object Tracking algoritmalarını tarafsız ve tek çatı altında karşılaştıran benchmark framework**
+
+---
+
+### 🧪 Desteklenen Tracker'lar
+`CSRT` · `DeepSORT` · `FlowTracker` · `BoT-SORT` · `MOSSE` · `NORFAIR` · `TLD`
+
+---
+
+<img src="https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge">
+<img src="https://img.shields.io/badge/OpenCV-Enabled-green?style=for-the-badge">
+<img src="https://img.shields.io/badge/RealTime-Yes-orange?style=for-the-badge">
+<img src="https://img.shields.io/badge/Platform-Linux/Windows-purple?style=for-the-badge">
+
+</div>
 
 ---
 
 ## 🎯 Amaç
-
-Farklı takip algoritmalarının gerçek senaryolardaki güçlü ve zayıf yönlerini karşılaştırmak ve görev ihtiyaçlarına göre en uygun takipçiyi seçmeyi kolaylaştırmak.
-
----
-
-## 🧩 Desteklenen Tracker’lar
-
-| Tracker | Yöntem | Not |
-|--------|--------|-----|
-| CSRT | DCF Tabanlı | Hedef değişimlerine dayanıklı |
-| DeepSORT | Appearance + Motion | ID koruma konusunda güçlü |
-| FlowTracker | Optical Flow | Yüksek kare hızı avantajı |
-| BoT-SORT | ReID + Kalman | ID Switch düşük, stabil |
-| MOSSE | Çok hafif DCF | Çok hızlı, düşük doğruluk |
-| NORFAIR | Motion-only | GPU kullanmayan hafif yapı |
-| TLD | Track-Learn-Detect | Eski nesil, düşük kararlılık |
+Gerçek senaryolarda **görev ihtiyaçlarına göre ideal takip algoritmasını seçmeyi** kolaylaştırmak.
 
 ---
 
-## 📊 Sonuçlar (Özet Tablo)
+## 📊 Performans Karşılaştırma Sonuçları
 
 | Metrik | CSRT | DeepSORT | FlowTrack | BoT-SORT | MOSSE | NORFAIR | TLD |
-|-------|------|----------|-----------|----------|-------|---------|-----|
-| **mean IoU** | 0.469 | 0.899 | 0.256 | 1.000 |  0.775 | 0.967 | 0.216 |
-| **Precision** | 0.476 | 1.000 | 0.179 | 0.992 | 0.882 | 0.990 | 0.129 |
-| **Recall** | 1.000 | 0.874 | 1.000 | 0.950 | 1.000 | 1.000 | 0.958 |
-| **F1 Score** | 0.645 | 0.933 | 0.304 | 0.971 | 0.937 | 0.995 | 0.228 |
-| **MOTA** | 0.476 | 0.874 | 0.179 | 0.943 | 0.882 | 0.990 | 0.958 |
+|-------|------|---------|-----------|-----------|--------|---------|-----|
+| **mean IoU** | 0.469 | 0.899 | 0.256 | **1.000** | 0.775 | 0.967 | 0.216 |
+| **Precision** | 0.476 | **1.000** | 0.179 | 0.992 | 0.882 | 0.990 | 0.129 |
+| **Recall** | **1.000** | 0.874 | **1.000** | 0.950 | **1.000** | **1.000** | 0.958 |
+| **F1 Score** | 0.645 | 0.933 | 0.304 | **0.971** | 0.937 | **0.995** | 0.228 |
+| **MOTA** | 0.476 | 0.874 | 0.179 | **0.943** | 0.882 | **0.990** | 0.958 |
 | **FPS** | 8.66 | 7.77 | 7.68 | **985.26** | 9.96 | 9.96 | 4.20 |
-
-> **BoT-SORT** hız + doğruluk dengesinde en ideal sonuçları verdi.  
-> **DeepSORT** ID koruma açısından güçlü.  
-> **MOSSE** ve **NORFAIR** oldukça hızlı, düşük sistem maliyetli.  
-> **TLD** ve **FlowTracker** modern görevlerde önerilmez.
 
 ---
 
-## ⚙️ Ölçülen Performans Göstergeleri
+## 🔍 Kısa Değerlendirme
+
+| Sonuç | Açıklama |
+|------|----------|
+| **BoT-SORT** | Hız + doğruluk dengesi en iyi |
+| **DeepSORT** | ID koruma güçlü, stabil |
+| **MOSSE / NORFAIR** | Çok hızlı, düşük donanım gereksinimi |
+| **TLD / FlowTracker** | Modern görevlerde önerilmez |
+
+---
+
+## 🧩 Tracker Açıklamaları
+
+| Tracker | Yöntem | Özellik |
+|--------|--------|---------|
+| **CSRT** | DCF Tabanlı | Hedef değişimlerine dayanıklı |
+| **DeepSORT** | Appearance + Motion | Güçlü ID koruma |
+| **FlowTracker** | Optical Flow | Düşük doğruluk, yüksek FPS |
+| **BoT-SORT** | ReID + Kalman | Düşük ID Switch, stabil |
+| **MOSSE** | Hafif DCF | Çok hızlı |
+| **NORFAIR** | Motion-only | GPU gerektirmez |
+| **TLD** | Track-Learn-Detect | Eski nesil |
+
+---
+
+## ⚙️ Ölçülen Metrikler
 
 | Metrik | Açıklama |
 |-------|----------|
-| **mean IoU** | Takip kutusunun doğruluğu |
-| **Precision / Recall / F1** | Tespit kalitesi |
-| **MOTA** | Toplam takip doğruluk metriği |
-| **FPS** | Gerçek zamanlılık ölçütü |
-| **Latency (ms)** | Çerçeve gecikmesi |
-| **CPU / GPU / RAM Usage** | Sistem kaynak tüketimi |
+| **IoU** | BBox doğruluk değerlendirmesi |
+| **F1 Score** | Tespit doğruluk dengesi |
+| **MOTA** | Genel izleme başarımı |
+| **FPS / Latency** | Gerçek zamanlılık ölçütü |
+| **CPU / GPU / RAM** | Sistem kaynak tüketimi |
+
+---
+
+## 🚀 Kurulum & Çalıştırma
+
+```bash
+git clone https://github.com/<username>/<repo-name>.git
+cd <repo-name>
+pip install -r requirements.txt
+python compare.py
