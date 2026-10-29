@@ -81,3 +81,5 @@ git clone https://github.com/<username>/<repo-name>.git
 cd <repo-name>
 pip install -r requirements.txt
 python compare.py
+
+# GUNCELLEME: Bu ilk sürümde metrik hesapları tracker’lar arasında tutarlı değil. Bazı tracker’larda IoU, elle etiketlenmiş referans (test_data/Video_01/groundtruth.txt) yerine dedektörün kendi kutusuyla hesaplanıyor. BoT-SORT’ta FPS ölçümü tespit süresini kapsamıyor. Bu yüzden tablodaki değerler kesin sonuç değil, kaba bir eleme olarak yorumlanmalı. Planlanan v2: ortak tespit çıktıları, ground truth tabanlı değerlendirme (TrackEval: MOTA, IDF1, HOTA), ByteTrack/OC-SORT eklenmesi ve Jetson üzerinde uçtan uca FPS ölçümü.
